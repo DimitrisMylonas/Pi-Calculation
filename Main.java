@@ -31,11 +31,11 @@ public class Main {
         System.out.println("Threads = " + numThreads);
         
         /* start timing */
-        long startTime = System.currentTimeMillis(); //xekinaei h katametrisi toy xronoy ypologismou tou pi
+        long startTime = System.currentTimeMillis(); 
         
         step = 1.0 / (double)numSteps; 
         
-        ExecutorService executor = Executors.newFixedThreadPool(cores);
+        ExecutorService executor = Executors.newFixedThreadPool(cores); //I want one executor for every core
 		
         for(int i = 0; i < numThreads; i++){
         	executor.execute((Runnable) new Calculation_Pi(i));
